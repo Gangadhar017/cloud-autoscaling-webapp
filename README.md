@@ -1,22 +1,31 @@
-# Cloud-Native URL Shortener with Auto-Scaling
+# 🚀 Cloud URL Shortener with Kubernetes Autoscaling
 
-A cloud-native URL shortener backend deployed on Kubernetes, demonstrating
-automatic scaling, health checks, and real-time monitoring.
+A production-style URL Shortener application demonstrating:
 
-## 🚀 Features
-- URL shortening and redirection
-- Click tracking and basic analytics
-- CPU-based Horizontal Pod Autoscaling (HPA)
-- Kubernetes liveness & readiness probes
-- Real-time metrics with Prometheus & Grafana
+- Kubernetes Horizontal Pod Autoscaler (HPA)
+- Prometheus & Grafana monitoring
+- Dockerized Node.js backend
+- Deployment on AWS EKS
+
+---
+
+## 🏗 Architecture
+![Architecture](architecture.png)
+
+---
 
 ## 🧰 Tech Stack
-- Node.js (Express)
-- Docker
-- Kubernetes (Minikube)
-- Horizontal Pod Autoscaler (HPA)
-- Prometheus & Grafana
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Containerization: Docker
+- Orchestration: Kubernetes (Minikube / EKS)
+- Monitoring: Prometheus, Grafana
+- Cloud: AWS EKS
 
-## 📡 API Endpoints
+---
 
-### Health
+## 🚀 Run Locally
+```bash
+cd app
+npm install
+npm start
