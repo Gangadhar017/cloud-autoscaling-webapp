@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: autoscale-service
+spec:
+  type: NodePort
+  selector:
+    app: autoscale
+  ports:
+    - port: 80
+      targetPort: 3000

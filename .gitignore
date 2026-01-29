@@ -1,0 +1,15 @@
+node_modules/
+.env
+dist/
+*.log
+
+# Docker
+**/node_modules
+Dockerfile.tmp
+
+# Kubernetes
+*.secret.yaml
+
+# OS
+.DS_Store
+Thumbs.db

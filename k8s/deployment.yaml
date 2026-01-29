@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoscale-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autoscale
+  template:
+    metadata:
+      labels:
+        app: autoscale
+    spec:
+      containers:
+      - name: app
+        image: autoscale-app
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
